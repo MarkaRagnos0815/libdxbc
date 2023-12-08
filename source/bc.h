@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "libDxBc.h"
+#include "libdxbc.h"
 #include "defs.h"
 
 namespace DirectX
