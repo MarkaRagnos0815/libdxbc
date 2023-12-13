@@ -5,8 +5,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-enum TEX_COMPRESS_FLAGS
-{
+namespace DxTex {
+
+enum TEX_COMPRESS_FLAGS {
     TEX_COMPRESS_DEFAULT = 0,
 
     TEX_COMPRESS_RGB_DITHER = 0x10000,
@@ -45,30 +46,31 @@ struct ColorVec {
 };
 
 extern "C" {
-    typedef void (*BC_DECODE)(ColorVec* pColor, const uint8_t* pBC);
-    typedef void (*BC_ENCODE)(uint8_t* pDXT, const ColorVec* pColor, uint32_t flags);
+typedef void (*BC_DECODE)(ColorVec* pColor, const uint8_t* pBC);
+typedef void (*BC_ENCODE)(uint8_t* pDXT, const ColorVec* pColor, uint32_t flags);
 
-    void BcDecodeBC1(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC2(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC3(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC4U(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC4S(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC5U(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC5S(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC6HU(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC6HS(ColorVec* pColor, const uint8_t* pBC);
-    void BcDecodeBC7(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC1(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC2(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC3(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC4U(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC4S(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC5U(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC5S(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC6HU(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC6HS(ColorVec* pColor, const uint8_t* pBC);
+void BcDecodeBC7(ColorVec* pColor, const uint8_t* pBC);
 
-    void BcEncodeBC1(uint8_t* pBC, const ColorVec* pColor, float threshold, uint32_t flags);
-    // BC1 requires one additional parameter, so it doesn't match signature of BC_ENCODE above
+void BcEncodeBC1(uint8_t* pBC, const ColorVec* pColor, float threshold, uint32_t flags);
+// BC1 requires one additional parameter, so it doesn't match signature of BC_ENCODE above
 
-    void BcEncodeBC2(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC3(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC4U(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC4S(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC5U(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC5S(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC6HU(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC6HS(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-    void BcEncodeBC7(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC2(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC3(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC4U(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC4S(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC5U(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC5S(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC6HU(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC6HS(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
+void BcEncodeBC7(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
 }
+}  // namespace DxTex

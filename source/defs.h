@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------
 // BC.h
-//  
+//
 // Block-compression (BC) functionality
 //
 // Copyright (c) Microsoft Corporation.
@@ -10,7 +10,6 @@
 //-------------------------------------------------------------------------------------
 
 #pragma once
-
 
 #include <stdio.h>
 #include <wchar.h>
@@ -34,7 +33,6 @@
 #endif
 
 #include <algorithm>
-
 
 #ifndef _Success_
 #define _Success_(a)
@@ -60,13 +58,12 @@
 #define _In_opt_
 #endif
 
-
 #ifndef _In_z_
 #define _In_z_
 #endif
 
 #ifndef _In_range_
-#define _In_range_(a,b)
+#define _In_range_(a, b)
 #endif
 
 #ifndef _Out_
@@ -140,4 +137,3 @@ typedef uint32_t HRESULT;
 #endif
 
 typedef uint16_t HALF;
-
