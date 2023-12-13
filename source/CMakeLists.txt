@@ -5,7 +5,7 @@ project(dxbc CXX)
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/build.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/functions.cmake)
 
-file(GLOB_RECURSE PROJECT_SOURCE_FILES *.cpp ../include/*.h)
+file(GLOB_RECURSE PROJECT_SOURCE_FILES *.* ../include/*.h)
 file(GLOB DXBC_HEADERS ../include/*)
 
 add_library(${PROJECT_NAME} STATIC ${PROJECT_SOURCE_FILES})

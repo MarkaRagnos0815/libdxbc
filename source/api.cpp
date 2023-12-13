@@ -1,6 +1,7 @@
 
 #include "bc.h"
-
+using namespace DirectX;
+using namespace DirectX::PackedVector;
 
 void BcDecodeBC1(ColorVec* pColor, const uint8_t* pBC) {
     DirectX::D3DXDecodeBC1((XMVECTOR*)pColor, pBC);
