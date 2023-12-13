@@ -1,4 +1,5 @@
 
+#include "libdxbc.h"
 #include "bc.h"
 using namespace DirectX;
 using namespace DirectX::PackedVector;

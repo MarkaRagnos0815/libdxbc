@@ -45,7 +45,6 @@ struct ColorVec {
     float a;
 };
 
-extern "C" {
 typedef void (*BC_DECODE)(ColorVec* pColor, const uint8_t* pBC);
 typedef void (*BC_ENCODE)(uint8_t* pDXT, const ColorVec* pColor, uint32_t flags);
 
@@ -72,5 +71,4 @@ void BcEncodeBC5S(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
 void BcEncodeBC6HU(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
 void BcEncodeBC6HS(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
 void BcEncodeBC7(uint8_t* pBC, const ColorVec* pColor, uint32_t flags);
-}
 }  // namespace DxTex
