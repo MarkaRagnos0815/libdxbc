@@ -33,4 +33,4 @@ target_include_directories(
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/default_target_settings.cmake)
 
 install(TARGETS dxbc RUNTIME DESTINATION bin LIBRARY DESTINATION bin ARCHIVE DESTINATION lib)
-install(FILES ${DXBC_HEADERS} DESTINATION include)
+install(FILES ${DXBC_HEADERS} DESTINATION include/${PROJECT_NAME})
